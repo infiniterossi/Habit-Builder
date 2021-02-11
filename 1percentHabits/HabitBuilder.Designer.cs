@@ -204,6 +204,11 @@ namespace _1percentHabits
             this.numValue.Name = "numValue";
             this.numValue.Size = new System.Drawing.Size(87, 20);
             this.numValue.TabIndex = 2;
+            this.numValue.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // gbHabit
             // 
