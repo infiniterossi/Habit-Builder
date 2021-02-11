@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Reflection;
 
 namespace _1percentHabits
 {
@@ -17,15 +18,23 @@ namespace _1percentHabits
         {
             InitializeComponent();
         }
-
-        List<string> habits = File.ReadAllLines("habits.txt").ToList();
-        //habit --- size --- time/quantity
-        List<List<string>> habitsSplit = new List<List<string>>();
         int index = 0;
+        string path;
+        List<string> habits;
+        List<List<string>> habitsSplit = new List<List<string>>();//[0]habit --- [1]size --- [2]time/quantity
         List<string> habit = new List<string>();
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            path = Path.Combine(Environment.GetFolderPath(System.Environment.SpecialFolder.UserProfile), "habits.txt");
+
+            if (!File.Exists(path))
+            {
+                File.Create(path).Close();
+            }
+            
+            habits = File.ReadAllLines(path).ToList();
+
             for (int i = 0; i < habits.Count; i++)
             {
                 List<string> split = habits[i].Split().ToList();
@@ -33,7 +42,6 @@ namespace _1percentHabits
                 lbHabits.Items.Add(split[0]);
             }
         }
-
 
         private void lbHabits_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -204,12 +212,7 @@ namespace _1percentHabits
             {
                 habits.Add(string.Join(" ", habitsSplit[i].ToArray()));
             }
-            File.WriteAllLines("habits.txt", habits);
-        }
-
-        private void lblHabit_Click(object sender, EventArgs e)
-        {
-
+            File.WriteAllLines(path, habits);
         }
 
         /*

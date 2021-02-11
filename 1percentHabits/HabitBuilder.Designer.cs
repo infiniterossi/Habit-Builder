@@ -29,6 +29,7 @@ namespace _1percentHabits
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HabitBuilder));
             this.lbHabits = new System.Windows.Forms.ListBox();
             this.txtName = new System.Windows.Forms.TextBox();
             this.cmbType = new System.Windows.Forms.ComboBox();
@@ -129,7 +130,6 @@ namespace _1percentHabits
             this.lblHabit.Size = new System.Drawing.Size(142, 26);
             this.lblHabit.TabIndex = 7;
             this.lblHabit.Text = "Select Habit";
-            this.lblHabit.Click += new System.EventHandler(this.lblHabit_Click);
             // 
             // lblInstruction
             // 
@@ -138,9 +138,8 @@ namespace _1percentHabits
             this.lblInstruction.Location = new System.Drawing.Point(332, 139);
             this.lblInstruction.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblInstruction.Name = "lblInstruction";
-            this.lblInstruction.Size = new System.Drawing.Size(61, 29);
+            this.lblInstruction.Size = new System.Drawing.Size(0, 29);
             this.lblInstruction.TabIndex = 8;
-            this.lblInstruction.Text = "rewr";
             // 
             // label1
             // 
@@ -259,6 +258,7 @@ namespace _1percentHabits
             this.Controls.Add(this.btnMinusPercent);
             this.Controls.Add(this.btnPlusPercent);
             this.Controls.Add(this.lbHabits);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "HabitBuilder";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
