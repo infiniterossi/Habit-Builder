@@ -138,9 +138,8 @@ namespace _1percentHabits
             this.lblInstruction.Location = new System.Drawing.Point(332, 139);
             this.lblInstruction.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblInstruction.Name = "lblInstruction";
-            this.lblInstruction.Size = new System.Drawing.Size(61, 29);
+            this.lblInstruction.Size = new System.Drawing.Size(0, 29);
             this.lblInstruction.TabIndex = 8;
-            this.lblInstruction.Text = "rewr";
             // 
             // label1
             // 
